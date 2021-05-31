@@ -123,7 +123,7 @@ if __name__ == '__main__':
     print('best epoch: {}, psnr: {:.2f}'.format(best_epoch, best_psnr))
     torch.save(best_weights, os.path.join(args.outputs_dir, 'best.pth'))
 
-    with open("results_{}.txt".format(args.model), "a") as f:
+    with open("results/results_{}.txt".format(args.model), "a") as f:
         for psnr in psnr_list:
             f.write("{} ".format(psnr))
         f.write("\n")
