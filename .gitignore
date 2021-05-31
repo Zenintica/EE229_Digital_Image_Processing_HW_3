@@ -1,7 +1,4 @@
 /.idea/
 /__pycache__/
 /test
-!/outputs/SRCNN/best.pth
-!/outpust/SIMPLENET/best.pth
-!/outputs/VDSR/best.pth
 /outputs
