@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def get_data_list(model_name):
     count = 0
     psnr = loss = list()
-    for line in open("results_{}.txt".format(model_name), "r"):
+    for line in open("results/results_{}.txt".format(model_name), "r"):
         if count == 0:
             psnr = line.rstrip(" \n").split(" ")
             psnr = [float(num) for num in psnr]
