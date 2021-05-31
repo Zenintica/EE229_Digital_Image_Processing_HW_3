@@ -15,9 +15,9 @@ from utils import AverageMeter, calc_psnr
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--train-file', type=str, default="final/train.h5")
-    parser.add_argument('--eval-file', type=str, default="final/test.h5")
-    parser.add_argument('--outputs-dir', type=str, default="final/outputs")
+    parser.add_argument('--train-file', type=str, default="data/train.h5")
+    parser.add_argument('--eval-file', type=str, default="data/test.h5")
+    parser.add_argument('--outputs-dir', type=str, default="models")
     parser.add_argument('--scale', type=int, default=3)
     parser.add_argument('--lr', type=float, default=2e-4)
     parser.add_argument('--batch-size', type=int, default=128)

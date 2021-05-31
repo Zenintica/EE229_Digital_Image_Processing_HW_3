@@ -1,10 +1,11 @@
 import argparse
-
 import torch
+import cv2
+
 import torch.backends.cudnn as cudnn
 import numpy as np
 import PIL.Image as pil_image
-import cv2
+
 from models import SRCNN, SIMPLENET, VDSR
 from utils import convert_rgb_to_ycbcr, convert_ycbcr_to_rgb, getpsnr, ssim
 
@@ -79,20 +80,19 @@ if __name__ == '__main__':
     image.save(args.image_file.replace('.', '_BICUBIC.'))
     # cv2.imwrite("test/test1.png",image)
 
-
-    output = reconstruct(image,model)
+    output = reconstruct(image, model)
 
     output.save(args.image_file.replace('.', '_RECONSTRUCT.'))
-    
+
     pic_down = cv2.imread("test/test_down.png")
     pic0 = cv2.imread("test/test.png")
     pic1 = cv2.imread("test/test_BICUBIC.png")
     pic2 = cv2.imread("test/test_RECONSTRUCT.png")
-    psnr1=getpsnr(pic0,pic1)
-    psnr2=getpsnr(pic0,pic2)
+    psnr1 = getpsnr(pic0, pic1)
+    psnr2 = getpsnr(pic0, pic2)
 
-    ssim1=ssim(pic0, pic1)
-    ssim2=ssim(pic0, pic2)
+    ssim1 = ssim(pic0, pic1)
+    ssim2 = ssim(pic0, pic2)
 
     print('BICUBIC')
     print('psnr: {}'.format(psnr1))
